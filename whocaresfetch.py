@@ -50,15 +50,6 @@ def os_fetch():
     statvfs = os.statvfs('/')
     print(colorize_text(f"Total Size: {round((statvfs.f_frsize * statvfs.f_blocks) / (1024. ** 3), 2)} GB", 'OKCYAN'))
 
-    print(colorize_text("\nNetwork Information:", 'OKGREEN'))
-    for interface, addrs in os.popen('ip addr').read().split('link/ether ')[1:]:
-        print(colorize_text(f"Interface: {interface.split(':')[0]}", 'OKCYAN'))
-        for addr in addrs.split():
-            if '.' in addr:
-                print(colorize_text(f"  Address: {addr.split('/')[0]}", 'OKCYAN'))
-            elif ':' in addr:
-                print(colorize_text(f"  MAC Address: {addr}", 'OKCYAN'))
-
     term_info, term_size = get_terminal_info()
     print(colorize_text("\nTerminal Information:", 'OKGREEN'))
     print(colorize_text(f"Shell: {term_info}", 'OKCYAN'))
