@@ -21,10 +21,10 @@ def colorize_text(text, color):
     }
     return f"{colors[color]}{text}{colors['ENDC']}"
 
-def os_fetch():
+def whocaresfetch():
     system_info = platform.uname()
 
-    print(colorize_text("OS Fetch", 'OKGREEN'))
+    print(colorize_text("Really, who cares?", 'OKBLUE'))
     print(colorize_text(f"System: {system_info.system}", 'OKCYAN'))
     print(colorize_text(f"Node: {system_info.node}", 'OKCYAN'))
     print(colorize_text(f"Release: {system_info.release}", 'OKCYAN'))
@@ -56,4 +56,4 @@ def os_fetch():
     print(colorize_text(f"Terminal Size: {term_size.columns} columns x {term_size.lines}", 'OKCYAN'))
 
 if __name__ == "__main__":
-    os_fetch()
+    whocaresfetch()
